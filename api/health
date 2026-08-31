@@ -1,0 +1,9 @@
+@app.route("/api/health", methods=["GET"])
+def health():
+    return jsonify({
+        "status": "ok",
+        "username_set": bool(os.environ.get("sailor_avijitroy")),
+        "session_b64_set": bool(os.environ.get("gASVsQAAAAAAAAB9lCiMCXNlc3Npb25pZJSMTjc4NTc3Njc5NTgwJTNBNGVUa0FwY1gxeUNoZTIlM0ExNCUzQUFZZ0ZoUmgyaWp5RWxLT0pYTUs2NnhVNkY4emJveU1mT2xFdHNZdE84Z5SMA21pZJSMAJSMBWlnX3BylIwBMZSMBWlnX3Z3lIwEMTkyMJSMCWNzcmZ0b2tlbpRoBIwJc19uZXR3b3JrlGgEjApkc191c2VyX2lklGgEdS4=")),
+        "session_loaded": SESSION_LOADED,
+        "session_error": SESSION_LOAD_ERROR
+    })
